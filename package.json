@@ -1,0 +1,30 @@
+{
+  "name": "preact-dev-cache-simulator",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc -b && vite build",
+    "preview": "vite preview",
+    "format": "prettier --write src vite.config.ts --ignore-unknown",
+    "format:check": "prettier --check src vite.config.ts --ignore-unknown"
+  },
+  "dependencies": {
+    "@preact/signals": "^2.11.2",
+    "@tailwindcss/vite": "^4.3.3",
+    "filesize": "^11.0.24",
+    "idb-keyval": "^6.3.0",
+    "lucide-preact": "^1.47.0",
+    "preact": "^10.29.8",
+    "tailwindcss": "^4.3.3",
+    "zod": "^4.6.5"
+  },
+  "devDependencies": {
+    "@preact/preset-vite": "^2.10.6",
+    "@types/node": "^24.13.3",
+    "prettier": "^3.9.8",
+    "typescript": "~6.0.2",
+    "vite": "^8.3.0"
+  }
+}

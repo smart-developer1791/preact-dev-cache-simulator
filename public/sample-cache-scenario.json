@@ -1,0 +1,20 @@
+{
+  "scenario": "Storefront edge cache",
+  "now": 120,
+  "sequence": 5,
+  "config": { "policy": "LRU", "capacity": 6, "defaultTtl": 90 },
+  "entries": [
+    { "key": "catalog:featured", "value": "{\"ids\":[1042,2088,3310]}", "sizeBytes": 24, "createdAt": 40, "lastAccessedAt": 112, "expiresAt": 180, "hits": 8, "sequence": 1 },
+    { "key": "product:1042", "value": "{\"name\":\"Thermal printer\",\"stock\":18}", "sizeBytes": 43, "createdAt": 60, "lastAccessedAt": 118, "expiresAt": 210, "hits": 12, "sequence": 2 },
+    { "key": "product:2088", "value": "{\"name\":\"Barcode scanner\",\"stock\":4}", "sizeBytes": 42, "createdAt": 75, "lastAccessedAt": 95, "expiresAt": 165, "hits": 3, "sequence": 3 },
+    { "key": "pricing:eu-west", "value": "{\"currency\":\"EUR\",\"tax\":0.2}", "sizeBytes": 28, "createdAt": 88, "lastAccessedAt": 109, "expiresAt": 148, "hits": 5, "sequence": 4 },
+    { "key": "navigation:primary", "value": "[\"Catalog\",\"Orders\",\"Account\"]", "sizeBytes": 30, "createdAt": 105, "lastAccessedAt": 105, "expiresAt": 240, "hits": 0, "sequence": 5 }
+  ],
+  "events": [
+    { "id": "e1", "at": 118, "operation": "GET", "result": "hit", "key": "product:1042", "detail": "Returned 43 bytes" },
+    { "id": "e2", "at": 112, "operation": "GET", "result": "hit", "key": "catalog:featured", "detail": "Returned 24 bytes" },
+    { "id": "e3", "at": 105, "operation": "SET", "result": "stored", "key": "navigation:primary", "detail": "TTL 135s" },
+    { "id": "e4", "at": 101, "operation": "GET", "result": "miss", "key": "account:session", "detail": "Key was not present" }
+  ],
+  "stats": { "hits": 28, "misses": 9, "evictions": 3, "writes": 11 }
+}

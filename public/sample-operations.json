@@ -1,0 +1,6 @@
+[
+  { "operation": "GET", "key": "product:1042" },
+  { "operation": "GET", "key": "product:9999" },
+  { "operation": "SET", "key": "campaign:autumn", "value": "{\"discount\":15}", "ttl": 45 },
+  { "operation": "ADVANCE", "seconds": 50 }
+]
